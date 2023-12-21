@@ -13,7 +13,7 @@ export class Plugboard {
         return letter;
     }
 
-    execute(letter: string) {
+    passThrough(letter: string) {
         return this.mapping[letter] || this.backward(letter)  || letter;
     }
 }

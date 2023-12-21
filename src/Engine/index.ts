@@ -28,7 +28,7 @@ export class Engine {
      */
     encrypt(letter: string): string {
         // Pass through plugboard
-        letter = this.plugboard.execute(letter);
+        letter = this.plugboard.passThrough(letter);
 
         // Pass through rotors
         this.rotors.forEach(rotor => {
@@ -44,7 +44,7 @@ export class Engine {
         }
 
         // Pass back through plugboard
-        letter = this.plugboard.execute(letter);
+        letter = this.plugboard.passThrough(letter);
 
         return letter;
     }
