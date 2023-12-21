@@ -1,9 +1,7 @@
 import {Rotor} from "../Rotor";
 import {Reflector} from "../Reflector";
 import {Plugboard} from "../Plugboard";
-/**
- * Represents an Enigma machine engine.
- */
+
 export class Engine {
     private rotors: Rotor[];
     private reflector: Reflector;
@@ -20,12 +18,7 @@ export class Engine {
         });
     }
 
-    /**
-     * Encrypts a letter using the plugboard, rotors, reflector, and plugboard in reverse order.
-     *
-     * @param {string} letter - The letter to be encrypted.
-     * @returns {string} The encrypted letter.
-     */
+
     encrypt(letter: string): string {
         // Pass through plugboard
         letter = this.plugboard.passThrough(letter);
@@ -49,15 +42,6 @@ export class Engine {
         return letter;
     }
 
-    /**
-     * Rotates the rotors in the enigma machine.
-     *
-     * This method rotates the rightmost rotor on every keypress. It also checks if the notches are reached and rotates the adjacent rotors accordingly.
-     *
-     * @memberof Engine
-     * @method rotateRotors
-     * @returns {void}
-     */
     rotateRotors(): void {
         // Rotate the rightmost rotor on every keypress
         this.rotors[this.rotors.length - 1].rotate();
@@ -70,12 +54,6 @@ export class Engine {
         }
     }
 
-    /**
-     * Encrypts the given plaintext using a rotor system.
-     *
-     * @param {string} plaintext - The plaintext to be encrypted.
-     * @returns {string} The encrypted ciphertext.
-     */
     execute(plaintext: string): string {
         let ciphertext = "";
         for (const char of plaintext) {

@@ -1,6 +1,3 @@
-/**
- * Represents a rotor in an Enigma machine.
- */
 export class Rotor {
     private readonly wiring: string;
     private readonly notch: number;
